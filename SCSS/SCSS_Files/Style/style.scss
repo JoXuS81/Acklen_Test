@@ -1,0 +1,847 @@
+//Fonts
+// Jura
+@font-face {
+    font-family:jura;
+    src:url("../../../Fonts/Jura/Jura-Regular.ttf");
+}
+
+// Megrim
+@font-face {
+    font-family:megrim;
+    src:url("../../../Fonts/Megrim/Megrim-Regular.ttf");
+}
+
+// Rajdhani
+@font-face {
+    font-family:rajdhani;
+    src:url("../../../Fonts/Rajdhani/Rajdhani-Regular.ttf");
+}
+
+// Raleway Dots
+@font-face {
+    font-family:raleway_dots;
+    src:url("../../../Fonts/Raleway Dots/RalewayDots-Regular.ttf");
+}
+
+// Text Me One
+@font-face {
+    font-family:text_me_one;
+    src:url("../../../Fonts/Text Me One/TextMeOne-Regular.ttf");
+}
+
+
+// Mixins
+@mixin a {
+    color:lightblue;
+    font-size:15px;
+}
+@mixin h1 {
+    color:white;
+    font-family:rajdhani;
+    font-size:50px;
+    margin:0 0 10px 0;
+}
+@mixin h2 {
+    color:white;
+    font-family:rajdhani;
+    font-size:30px;
+    margin:0 0 10px 0;
+}
+@mixin p {
+    color:white;
+    font-family:jura;
+    font-size:20px;
+    margin:0;
+}
+
+
+@mixin a_300 {
+    font-size:12px;
+    text-align:center;
+}
+@mixin h1_300 {
+    font-size:20px;
+    text-align:center;
+}
+@mixin h2_300 {
+    font-size:12px;
+    text-align:center;
+}
+@mixin p_300 {
+    font-size:12px;
+    text-align:center;
+}
+
+
+@mixin a_400 {
+    font-size:12px;
+    text-align:center;
+}
+@mixin h1_400 {
+    font-size:28px;
+    text-align:center;
+}
+@mixin h2_400 {
+    font-size:17px;
+    text-align:center;
+}
+@mixin p_400 {
+    font-size:12px;
+    text-align:center;
+}
+
+
+@mixin a_500 {
+    font-size:12px;
+    text-align:center;
+}
+@mixin h1_500 {
+    font-size:40px;
+    text-align:center;
+}
+@mixin h2_500 {
+    font-size:24px;
+    text-align:center;
+}
+@mixin p_500 {
+    font-size:16px;
+    text-align:center;
+}
+
+
+@mixin a_1199 {
+    text-align:center;
+}
+@mixin h1_1199 {
+    text-align:center;
+}
+@mixin h2_1199 {
+    text-align:center;
+}
+@mixin p_1199 {
+    text-align:center;
+}
+
+
+@mixin a_2400 {
+    font-size:18px;
+}
+@mixin h1_2400 {
+    font-size:62px;
+    margin:0 0 12.5px 0;
+}
+@mixin h2_2400 {
+    font-size:37px;
+    margin:0 0 12.5px 0;
+}
+@mixin p_2400 {
+    font-size:25px;
+}
+
+
+@mixin a_3000 {
+    font-size:22px;
+}
+@mixin h1_3000 {
+    font-size:77px;
+    margin:0 0 15.6px 0;
+}
+@mixin h2_3000 {
+    font-size:46px;
+    margin:0 0 15.6px 0;
+}
+@mixin p_3000 {
+    font-size:31px;
+}
+
+
+@mixin a_3750 {
+    font-size:27px;
+}
+@mixin h1_3750 {
+    font-size:96px;
+    margin:0 0 19.5px 0;
+}
+@mixin h2_3750 {
+    font-size:57px;
+    margin:0 0 19.5px 0;
+}
+@mixin p_3750 {
+    font-size:38px;
+}
+
+
+@mixin a_large {
+    font-size:33px;
+}
+@mixin h1_large {
+    font-size:120px;
+    margin:0 0 24.3px 0;
+}
+@mixin h2_large {
+    font-size:71px;
+    margin:0 0 24.3px 0;
+}
+@mixin p_large {
+    font-size:47px;
+}
+
+
+// Variables
+$background:#1d282b;
+
+
+/* Body */
+body {
+    background:$background;
+
+
+    * {
+        box-sizing:border-box; 
+    }
+
+    // Content - this is a container for the whole page. Display and justify content are there because I needed to center content of the page-wrap.
+    .content {
+        display:flex;
+        justify-content:center;
+        // Added top and down margins for the content, and instead 800px, I have inserted 90%, because it gave to me flexible layout on all screens.
+        .page-wrap {
+            margin:25px 0 25px 0;
+            width:90%;
+            .main-story {
+                margin:0 0 25px 0;
+                position:relative;
+                width:100%;
+                img {
+                    display:block;
+                }
+                .story-intro {
+                    background:rgba(0, 0, 0, 0.75);
+                    bottom:0;
+                    color:white;
+                    left:0;
+                    padding:20px;
+                    position:absolute;
+                    width:100%;
+                    .story_1 {
+                        color:white;
+                        font-size:40px;
+                    }
+                }
+            }
+            // In this part I have used Bootstrap's three columns, but needed to slightly adjust positions of the left and right images and text.
+            .sub-stories {
+                .firstSubStory {
+                    img {
+                        position:relative;
+                        right:15px;
+                    }
+                    .substoryArea {
+                        margin-top:5px;
+                        position:relative;
+                        right:15px;
+                        .bottomParagraph {
+                            font-size:15px;
+                        }
+                    }
+                }
+                .last {
+                    img {
+                        left:15px;
+                        position:relative;
+                    }
+                    .substoryArea {
+                        left:15px;
+                        margin-top:5px;
+                        position:relative;
+                        .bottomParagraph {
+                            font-size:15px;
+                        }
+                    }
+                }
+                .secondSubStory {
+                    .substoryArea {
+                        margin-top:5px;
+                        .bottomParagraph {
+                            font-size:15px;
+                        }
+                    }
+                }
+                .sub-story {
+                    padding:15px;
+                    img {
+                        display:block;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // A
+    a {
+        @include a;
+    }
+    // H1
+    h1 {
+        @include h1;
+    }
+    // H2
+    h2 {
+        @include h2;
+    }
+    // P
+    p {
+        @include p;
+    }
+
+
+}
+
+
+// Work with Different Screen Sizes
+@media (max-width:300px) {
+    body {
+        .content {
+            .page-wrap {
+                .main-story {
+                    .story-intro {
+                        .story_1 {
+                            font-size:18px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:2px;
+                        }
+                        .substoryArea {
+                            right:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:2px;
+                        }
+                        .substoryArea {
+                            left:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:2px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_300;
+        }
+        h1 {
+            @include h1_300;
+        }
+        h2 {
+            @include h2_300;
+        }
+        p {
+            @include p_300;
+        }
+    }
+}
+
+
+@media (min-width:301px) and (max-width:400px) {
+    body {
+        .content {
+            .page-wrap {
+                .main-story {
+                    .story-intro {
+                        .story_1 {
+                            font-size:26px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:2px;
+                        }
+                        .substoryArea {
+                            right:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:2px;
+                        }
+                        .substoryArea {
+                            left:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:2px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_400;
+        }
+        h1 {
+            @include h1_400;
+        }
+        h2 {
+            @include h2_400;
+        }
+        p {
+            @include p_400;
+        }
+    }
+}
+
+
+@media (min-width:401px) and (max-width:500px) {
+    body {
+        .content {
+            .page-wrap {
+                .main-story {
+                    .story-intro {
+                        .story_1 {
+                            font-size:32px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:2px;
+                        }
+                        .substoryArea {
+                            right:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:2px;
+                        }
+                        .substoryArea {
+                            left:2px;
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            .bottomParagraph {
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:2px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_500;
+        }
+        h1 {
+            @include h1_500;
+        }
+        h2 {
+            @include h2_500;
+        }
+        p {
+            @include p_500;
+        }
+    }
+}
+
+
+@media (min-width:501px) and (max-width:1199px) {
+    body {
+        .content {
+            .page-wrap {
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:5px;
+                        }
+                        .substoryArea {
+                            right:5px;
+                        }
+                    }
+                    .last {
+                        img {
+                            left:5px;
+                        }
+                        .substoryArea {
+                            left:5px;
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            margin-top:5px;
+                            .bottomParagraph {
+                                font-size:15px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:5px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_1199;
+        }
+        h1 {
+            @include h1_1199;
+        }
+        h2 {
+            @include h2_1199;
+        }
+        p {
+            @include p_1199;
+        }
+    }
+}
+
+
+@media (max-width:700px) {
+    body {
+        .content {
+            .page-wrap {
+                .main-story {
+                    .story-intro {
+                        padding:5px;
+                        position:relative;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:701px) and (max-width:800px) {
+    body {
+        .content {
+            .page-wrap {
+                .main-story {
+                    .story-intro {
+                        padding:5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:1921px) and (max-width:2400px) {
+    body {
+        .content {
+            .page-wrap {
+                margin:31px 0 31px 0;
+                .main-story {
+                    margin:0 0 31px 0;
+                    .story-intro {
+                        padding:25px;
+                        .story_1 {
+                            font-size:50px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:18px;
+                        }
+                        .substoryArea {
+                            margin-top:6.2px;
+                            right:18px;
+                            .bottomParagraph {
+                                font-size:18px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:18px;
+                        }
+                        .substoryArea {
+                            left:18px;
+                            margin-top:6.2px;
+                            .bottomParagraph {
+                                font-size:18px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            margin-top:6.2px;
+                            .bottomParagraph {
+                                font-size:18px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:18px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_2400;
+        }
+        h1 {
+            @include h1_2400;
+        }
+        h2 {
+            @include h2_2400;
+        }
+        p {
+            @include p_2400;
+        }
+    }
+}
+
+
+@media (min-width:2401px) and (max-width:3000px) {
+    body {
+        .content {
+            .page-wrap {
+                margin:38px 0 38px 0;
+                .main-story {
+                    margin:0 0 38px 0;
+                    .story-intro {
+                        padding:31px;
+                        .story_1 {
+                            font-size:62px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:22px;
+                        }
+                        .substoryArea {
+                            margin-top:7.7px;
+                            right:22px;
+                            .bottomParagraph {
+                                font-size:22px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:22px;
+                        }
+                        .substoryArea {
+                            left:22px;
+                            margin-top:7.7px;
+                            .bottomParagraph {
+                                font-size:22px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            margin-top:7.7px;
+                            .bottomParagraph {
+                                font-size:22px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:22px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_3000;
+        }
+        h1 {
+            @include h1_3000;
+        }
+        h2 {
+            @include h2_3000;
+        }
+        p {
+            @include p_3000;
+        }
+    }
+}
+
+
+@media (min-width:3001px) and (max-width:3750px) {
+    body {
+        .content {
+            .page-wrap {
+                margin:47px 0 47px 0;
+                .main-story {
+                    margin:0 0 47px 0;
+                    .story-intro {
+                        padding:38px;
+                        .story_1 {
+                            font-size:77px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:27px;
+                        }
+                        .substoryArea {
+                            margin-top:9.6px;
+                            right:27px;
+                            .bottomParagraph {
+                                font-size:27px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:27px;
+                        }
+                        .substoryArea {
+                            left:27px;
+                            margin-top:9.6px;
+                            .bottomParagraph {
+                                font-size:27px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            margin-top:9.6px;
+                            .bottomParagraph {
+                                font-size:27px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:27px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_3750;
+        }
+        h1 {
+            @include h1_3750;
+        }
+        h2 {
+            @include h2_3750;
+        }
+        p {
+            @include p_3750;
+        }
+    }
+}
+
+
+@media (min-width:3751px) {
+    body {
+        .content {
+            .page-wrap {
+                margin:58px 0 58px 0;
+                .main-story {
+                    margin:0 0 58px 0;
+                    .story-intro {
+                        padding:47px;
+                        .story_1 {
+                            font-size:96px;
+                        }
+                    }
+                }
+                .sub-stories {
+                    .firstSubStory {
+                        img {
+                            right:33px;
+                        }
+                        .substoryArea {
+                            margin-top:12px;
+                            right:33px;
+                            .bottomParagraph {
+                                font-size:33px;
+                            }
+                        }
+                    }
+                    .last {
+                        img {
+                            left:33px;
+                        }
+                        .substoryArea {
+                            left:33px;
+                            margin-top:12px;
+                            .bottomParagraph {
+                                font-size:33px;
+                            }
+                        }
+                    }
+                    .secondSubStory {
+                        .substoryArea {
+                            margin-top:12px;
+                            .bottomParagraph {
+                                font-size:33px;
+                            }
+                        }
+                    }
+                    .sub-story {
+                        padding:33px;
+                    }
+                }
+            }
+        }
+        a {
+            @include a_large;
+        }
+        h1 {
+            @include h1_large;
+        }
+        h2 {
+            @include h2_large;
+        }
+        p {
+            @include p_large;
+        }
+    }
+}
